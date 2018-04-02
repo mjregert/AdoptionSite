@@ -1,0 +1,16 @@
+/*
+ THIS STYLESHEET IS COMMON ACROSS ALL PAGES.
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Handlee');
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Handlee', cursive, serif;
+}

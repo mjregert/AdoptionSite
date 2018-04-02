@@ -1,3 +1,134 @@
-.grid-container {
-  display: grid;
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: white;
+}
+
+/*
+    ------------------------------------------------
+    Background media queries to limit the file size.  These breakpoints come
+    from the file sizes allowed to be downloaded.  The background image comes
+    from https://pixabay.com/en/knowledge-book-library-glasses-1052011/
+ */
+
+html {
+    background-size: cover;
+}
+
+@media only screen and (max-width: 640px) {
+    html {
+        background: url("../img/knowledge-1052011_640.jpg") no-repeat center center fixed;
+    }
+}
+
+@media only screen and (min-width: 641px) {
+    html {
+        background: url("../img/knowledge-1052011_1280.jpg") no-repeat center center fixed;
+    }
+}
+
+@media only screen and (min-width: 1281px) {
+    html {
+        background: url("../img/knowledge-1052011_1920.jpg") no-repeat center center fixed;
+    }
+}
+
+@media only screen and (min-width: 1921px) {
+    html {
+        background: url("../img/knowledge-1052011_3440.jpg") no-repeat center center fixed;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+    .container {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: "mainHeader" "mainNavigation" "mainContent" "mainFooter";
+    }
+    .mainHeader {
+        font-size: 1.5rem;
+        text-shadow: 1.5px 1.5px 1.5px #1C1109;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+    /*    .container {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "mainHeader  mainHeader" "mainNavigation mainContent" "mainFooter mainFooter";
+    }
+    .mainHeader {
+        font-size: 2rem;
+        text-shadow: 3px 3px 3px #1C1109;
+    }
+    */
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "mainHeader mainHeader mainHeader" "aboutFamilyText whyAdoptionText whyKazakhstanText" "mainFooter mainFooter mainFooter";
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {}
+
+.mainHeader {
+    grid-area: mainHeader;
+    font-weight: bold;
+    text-align: center;
+}
+
+.mainContent {
+    grid-area: mainContent;
+}
+
+.aboutFamilyText {
+    grid-area: aboutFamilyText;
+}
+
+.whyAdoptionText {
+    grid-area: whyAdoptionText;
+}
+
+.whyKazakhstanText {
+    grid-area: whyKazakhstanText;
+}
+
+.article-container {
+    background-color: hsla(0, 0%, 0%, 0.40);
+    border-radius: 1rem;
+    padding: .5rem 2rem;
+    margin: 0 2rem 1rem 2rem;
+}
+
+.mainNavigation {
+    grid-area: mainNavigation;
+    background-color: #f90;
+    padding: 20px;
+}
+
+.mainFooter {
+    grid-area: mainFooter;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.4em;
+    background-color: #690;
 }
